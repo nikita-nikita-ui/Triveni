@@ -1,5 +1,5 @@
 import { useState, useRef, useEffect } from "react";
-
+import { useNavigate } from "react-router-dom";
 const products = [
   {
     name: "Fertilizers",
@@ -166,7 +166,7 @@ export default function Navbar() {
   const [activeLink, setActiveLink] = useState("Home");
   const dropdownRef = useRef(null);
   const timeoutRef = useRef(null);
-
+  const navigate = useNavigate();
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 60);
     window.addEventListener("scroll", handleScroll);
@@ -264,7 +264,14 @@ export default function Navbar() {
           {navLinks.map((link) => (
             <button
               key={link}
-              onClick={() => setActiveLink(link)}
+              onClick={() => {
+                setActiveLink(link);
+
+                if (link === "Home") navigate("/");
+                if (link === "About") navigate("/about");
+                if (link === "Blog") navigate("/blog");
+                if (link === "Contact") navigate("/contact");
+              }}
               style={{
                 background: "none",
                 border: "none",

@@ -1,5 +1,5 @@
 import Chemicals from "../../Images/Chemicals.jpeg";
-import React, { useEffect, useState } from "react";
+import  { useEffect, useState } from "react";
 import leaf1 from "../../Images/leaf1.png";
 
 export default function TriveniChemicals() {
@@ -41,7 +41,11 @@ export default function TriveniChemicals() {
           </span>
         </p>
 
-        <h2 className="text-3xl md:text-5xl font-black mt-4 tracking-tight min-h-[50px] md:min-h-[60px] bg-gradient-to-r from-black via-green-900 to-yellow-600 bg-clip-text text-transparent pb-1">
+        <h2
+          className="text-3xl md:text-5xl font-black mt-4 tracking-tight min-h-[50px] md:min-h-[60px] text-green-900 pb-1"
+          style={{ textShadow: "2px 2px 6px rgba(0,0,0,0.25)" }}
+        >
+          {" "}
           {text}
         </h2>
 
