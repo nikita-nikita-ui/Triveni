@@ -1,6 +1,5 @@
 import React from "react";
 
-// प्राकृतिक तेज़ धूप (Sunlight), पेड़ (Trees) और पौधों (Plants) से भरपूर खूबसूरत लाइट इमेज
 const bgImage =
   "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&q=80&w=1920";
 
