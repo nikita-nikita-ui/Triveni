@@ -1,9 +1,10 @@
 import { useState, useRef, useEffect } from "react";
-import { useNavigate, useLocation } from "react-router-dom"; // useLocation को इम्पोर्ट किया
+import { useNavigate } from "react-router-dom";
 
 const products = [
   {
     name: "Fertilizers",
+    path: "/products/fertilizers",
     icon: (
       <svg
         width="16"
@@ -23,6 +24,7 @@ const products = [
   },
   {
     name: "Insecticides",
+    path: "/products/insecticides",
     icon: (
       <svg
         width="16"
@@ -46,6 +48,7 @@ const products = [
   },
   {
     name: "Fungicides",
+    path: "/products/fungicides",
     icon: (
       <svg
         width="16"
@@ -65,6 +68,7 @@ const products = [
   },
   {
     name: "Herbicides",
+    path: "/products/herbicides",
     icon: (
       <svg
         width="16"
@@ -86,6 +90,7 @@ const products = [
   },
   {
     name: "PGR",
+    path: "/products/pgr",
     icon: (
       <svg
         width="16"
@@ -104,6 +109,7 @@ const products = [
   },
   {
     name: "Biostimulants",
+    path: "/products/biostimulants",
     icon: (
       <svg
         width="16"
@@ -122,6 +128,7 @@ const products = [
   },
   {
     name: "Imported Nutrient",
+    path: "/products/imported-nutrient",
     icon: (
       <svg
         width="16"
@@ -141,6 +148,7 @@ const products = [
   },
   {
     name: "Organic Manure",
+    path: "/products/organic-manure",
     icon: (
       <svg
         width="16"
@@ -164,23 +172,11 @@ const navLinks = ["Home", "About", "Blog", "Contact"];
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [productsOpen, setProductsOpen] = useState(false);
+  const [activeLink, setActiveLink] = useState("Home");
   const dropdownRef = useRef(null);
   const timeoutRef = useRef(null);
 
   const navigate = useNavigate();
-  const location = useLocation(); // यूआरएल (URL) का पता लगाने के लिए
-
-  // वर्तमान यूआरएल पाथ (path) के अनुसार एक्टिव लिंक तय करने के लिए फंक्शन
-  const getActiveLink = () => {
-    const path = location.pathname;
-    if (path === "/") return "Home";
-    if (path.startsWith("/about")) return "About";
-    if (path.startsWith("/blog")) return "Blog";
-    if (path.startsWith("/contact")) return "Contact";
-    return "";
-  };
-
-  const activeLink = getActiveLink();
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 60);
@@ -224,7 +220,6 @@ export default function Navbar() {
           justifyContent: "space-between",
         }}
       >
-        {/* Logo */}
         <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
           <div
             style={{
@@ -274,13 +269,12 @@ export default function Navbar() {
           </span>
         </div>
 
-        {/* Nav links */}
         <nav style={{ display: "flex", alignItems: "center", gap: 4 }}>
           {navLinks.map((link) => (
             <button
               key={link}
               onClick={() => {
-                // अब setActiveLink() की जरूरत नहीं है, नेविगेट होते ही URL बदल जाएगा और सक्रिय लिंक अपने आप डिटेक्ट हो जाएगा।
+                setActiveLink(link);
                 if (link === "Home") navigate("/");
                 if (link === "About") navigate("/about");
                 if (link === "Blog") navigate("/blog");
@@ -331,7 +325,6 @@ export default function Navbar() {
             </button>
           ))}
 
-          {/* Products dropdown */}
           <div
             ref={dropdownRef}
             onMouseEnter={handleMouseEnter}
@@ -339,11 +332,18 @@ export default function Navbar() {
             style={{ position: "relative" }}
           >
             <button
+              onClick={() => {
+                setActiveLink("Products");
+                navigate("/products");
+              }}
               style={{
                 background: productsOpen ? "rgba(255,255,255,0.08)" : "none",
                 border: "none",
                 cursor: "pointer",
-                color: "rgba(255,255,255,0.72)",
+                color:
+                  activeLink === "Products"
+                    ? "#5dce68"
+                    : "rgba(255,255,255,0.72)",
                 fontSize: 18,
                 letterSpacing: "0.7px",
                 textTransform: "uppercase",
@@ -374,7 +374,6 @@ export default function Navbar() {
               </svg>
             </button>
 
-            {/* Dropdown panel */}
             <div
               style={{
                 position: "absolute",
@@ -392,7 +391,6 @@ export default function Navbar() {
                 boxShadow: "0 20px 40px rgba(0,0,0,0.5)",
               }}
             >
-              {/* Arrow */}
               <div
                 style={{
                   position: "absolute",
@@ -432,11 +430,13 @@ export default function Navbar() {
 
 function DropItem({ item }) {
   const [hovered, setHovered] = useState(false);
+  const navigate = useNavigate();
 
   return (
     <div
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
+      onClick={() => navigate(item.path)}
       style={{
         display: "flex",
         alignItems: "center",
