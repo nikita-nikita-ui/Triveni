@@ -4,16 +4,17 @@ import About from "./pages/About/About";
 import Blog from "./pages/Blog/blog";
 import Product from "./pages/Products/Product";
 import Contact from "./pages/Contact/Contact";
-
+import Fertilizers from "./pages/Fertilizers/Fertilizers";
 function App() {
   return (
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
-          <Route path="/blog" element={<Blog />} />
-          <Route path="/contact" element={<Contact />} />
+        <Route path="/blog" element={<Blog />} />
+        <Route path="/contact" element={<Contact />} />
         <Route path="/products" element={<Product />} />
+        <Route path="/products/fertilizers" element={<Fertilizers />} />
         <Route path="/products/:category" element={<Product />} />
       </Routes>
     </BrowserRouter>
