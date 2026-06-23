@@ -175,6 +175,7 @@ export default function Navbar() {
   const [activeLink, setActiveLink] = useState("Home");
   const dropdownRef = useRef(null);
   const timeoutRef = useRef(null);
+
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -280,6 +281,7 @@ export default function Navbar() {
                 if (link === "Contact") navigate("/contact");
               }}
               style={{
+                position: "relative",
                 background: "none",
                 border: "none",
                 cursor: "pointer",
@@ -288,7 +290,7 @@ export default function Navbar() {
                 fontSize: 18,
                 letterSpacing: "0.7px",
                 textTransform: "uppercase",
-                padding: "8px 14px",
+                padding: "8px 14px 12px 14px",
                 borderRadius: 8,
                 fontFamily: "inherit",
                 transition: "color 0.2s, background 0.2s",
@@ -304,6 +306,22 @@ export default function Navbar() {
               }}
             >
               {link}
+              {/* एक्टिव होने पर दिखने वाली ग्रीन लाइन */}
+              <span
+                style={{
+                  position: "absolute",
+                  bottom: "3px",
+                  left: "14px",
+                  right: "14px",
+                  height: "3px",
+                  backgroundColor: "#5dce68",
+                  borderRadius: "2px",
+                  transform: activeLink === link ? "scaleX(1)" : "scaleX(0)",
+                  transformOrigin: "center",
+                  opacity: activeLink === link ? 1 : 0,
+                  transition: "transform 0.25s ease, opacity 0.25s ease",
+                }}
+              />
             </button>
           ))}
 
@@ -329,7 +347,7 @@ export default function Navbar() {
                 fontSize: 18,
                 letterSpacing: "0.7px",
                 textTransform: "uppercase",
-                padding: "8px 14px",
+                padding: "8px 14px 12px 14px",
                 borderRadius: 8,
                 fontFamily: "inherit",
                 display: "flex",
