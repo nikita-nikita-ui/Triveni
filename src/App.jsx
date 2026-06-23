@@ -5,6 +5,13 @@ import Blog from "./pages/Blog/blog";
 import Product from "./pages/Products/Product";
 import Contact from "./pages/Contact/Contact";
 import Fertilizers from "./pages/Fertilizers/Fertilizers";
+import Insecticides from "./pages/Insecticides/Insecticides";
+import Fungicides from "./pages/Fungicides/Fungicides";
+import Herbicides from "./pages/Herbicides/Herbicides";
+import PGR from "./pages/PGR/PGR";
+import Biostimulants from "./pages/Biostimulants/Biostimulants";
+import ImportedNutrient from "./pages/ImportedNutrient/ImportedNutrient";
+import OrganicManure from "./pages/OrganicManure/OrganicManure";
 function App() {
   return (
     <BrowserRouter>
@@ -16,6 +23,16 @@ function App() {
         <Route path="/products" element={<Product />} />
         <Route path="/products/fertilizers" element={<Fertilizers />} />
         <Route path="/products/:category" element={<Product />} />
+        <Route path="/products/insecticides" element={<Insecticides />} />
+        <Route path="/products/fungicides" element={<Fungicides />} />
+        <Route path="/products/herbicides" element={<Herbicides />} />
+        <Route path="/products/pgr" element={<PGR />} />
+        <Route path="/products/biostimulants" element={<Biostimulants />} />
+        <Route path="/products/organic-manure" element={<OrganicManure />} />
+        <Route
+          path="/products/imported-nutrient"
+          element={<ImportedNutrient />}
+        />
       </Routes>
     </BrowserRouter>
   );
