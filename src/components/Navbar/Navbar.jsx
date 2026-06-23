@@ -5,6 +5,17 @@ const products = [
   {
     name: "Fertilizers",
     path: "/products/fertilizers",
+    hasSubmenu: true,
+    children: [
+      {
+        name: "Bio Fertilizers",
+        path: "/products/biostimulants",
+      },
+      {
+        name: "Imported Fertilizers",
+        path: "/products/imported-nutrient",
+      },
+    ],
     icon: (
       <svg
         width="16"
@@ -168,7 +179,6 @@ const products = [
 ];
 
 const navLinks = ["Home", "About", "Blog", "Contact"];
-
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [productsOpen, setProductsOpen] = useState(false);
@@ -431,14 +441,29 @@ export default function Navbar() {
 function DropItem({ item }) {
   const [hovered, setHovered] = useState(false);
   const navigate = useNavigate();
-
+  const [subOpen, setSubOpen] = useState(false);
+  const [expanded, setExpanded] = useState(false);
   return (
     <div
-      onMouseEnter={() => setHovered(true)}
-      onMouseLeave={() => setHovered(false)}
-      onClick={() => navigate(item.path)}
+      onMouseEnter={() => {
+        setHovered(true);
+        setSubOpen(true);
+      }}
+      onMouseLeave={() => {
+        setHovered(false);
+        setSubOpen(false);
+      }}
+      onClick={() => {
+        if (item.hasSubmenu) {
+          setExpanded(!expanded);
+        } else {
+          navigate(item.path);
+        }
+      }}
       style={{
         display: "flex",
+        position: "relative",
+
         alignItems: "center",
         gap: 10,
         padding: "9px 10px",
@@ -475,7 +500,18 @@ function DropItem({ item }) {
             transition: "color 0.15s",
           }}
         >
-          {item.name}
+          <div
+            style={{
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "space-between",
+              width: "100%",
+            }}
+          >
+            <span>{item.name}</span>
+
+            {item.hasSubmenu && <span style={{ fontSize: "12px" }}>▶</span>}
+          </div>
         </div>
         <div
           style={{
@@ -488,6 +524,37 @@ function DropItem({ item }) {
           {item.sub}
         </div>
       </div>
+      {item.hasSubmenu && expanded && (
+        <div
+          style={{
+            marginTop: "8px",
+            marginLeft: "40px",
+            display: "flex",
+            flexDirection: "column",
+            gap: "6px",
+          }}
+        >
+          {item.children.map((child) => (
+            <div
+              key={child.name}
+              onClick={(e) => {
+                e.stopPropagation();
+                navigate(child.path);
+              }}
+              style={{
+                padding: "8px 12px",
+                borderRadius: "6px",
+                background: "rgba(255,255,255,0.05)",
+                color: "#fff",
+                cursor: "pointer",
+                fontSize: "12px",
+              }}
+            >
+              {child.name}
+            </div>
+          ))}
+        </div>
+      )}
     </div>
   );
 }
