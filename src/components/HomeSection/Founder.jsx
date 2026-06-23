@@ -20,7 +20,7 @@ export default function Founder() {
   return (
     <section className="animated-bg relative w-full py-24 px-6 md:px-24 overflow-hidden border-b border-green-100/40">
       <img
-        src={leaf1}
+    
         alt="background ornament"
         className="absolute bottom-0 left-0 w-full opacity-10 pointer-events-none transform scale-y-[-1] origin-center rotate-180"
       />
@@ -75,25 +75,25 @@ export default function Founder() {
           </p>
         </div>
 
-        <div className="mt-14 flex items-center justify-center gap-5 px-8 py-5 rounded-full w-fit mx-auto bg-white/60 backdrop-blur-md border border-white/80 shadow-[0_15px_30px_rgba(0,0,0,0.03)] hover:shadow-[0_25px_50px_rgba(59,130,246,0.18)] hover:bg-white/90 hover:border-blue-200 transition-all duration-500 hover:scale-105 cursor-pointer founder-card anim-fade-up delay-400">
-          <div className="relative group/avatar">
-            <div className="absolute -inset-1 bg-gradient-to-r from-yellow-300 via-green-400 to-blue-400 rounded-full blur opacity-30 group-hover/avatar:opacity-100 group-hover/avatar:animate-spin duration-1000"></div>
-            <img
-              src={trivenidp}
-              alt="Founder"
-              className="relative w-20 h-20 rounded-full object-cover border-2 border-green-500 shadow-inner group-hover/avatar:scale-105 transition-transform duration-500"
-            />
-          </div>
+<div className="mt-14 flex items-center justify-center gap-5 px-8 py-5 rounded-full w-fit mx-auto shadow-[0_15px_30px_rgba(0,0,0,0.03)] hover:shadow-[0_25px_50px_rgba(59,130,246,0.18)] transition-all duration-500 hover:scale-105 cursor-pointer founder-card anim-fade-up delay-400">
+  <div className="relative group/avatar">
+    <div className="absolute -inset-1 bg-gradient-to-r from-yellow-300 via-green-400 to-blue-400 rounded-full blur opacity-30 group-hover/avatar:opacity-100 group-hover/avatar:animate-spin duration-1000"></div>
+    <img
+      src={trivenidp}
+      alt="Founder"
+      className="relative w-20 h-20 rounded-full object-cover border-2 border-green-500 shadow-inner group-hover/avatar:scale-105 transition-transform duration-500"
+    />
+  </div>
 
-          <div className="text-left">
-            <h4 className="text-blue-900 font-black text-lg md:text-xl tracking-tight transition-colors duration-300 hover:text-blue-700">
-              Sh. Chander Goyal
-            </h4>
-            <p className="text-gray-500 font-semibold text-sm md:text-base mt-0.5 tracking-wide">
-              Managing Director
-            </p>
-          </div>
-        </div>
+  <div className="text-left">
+    <h4 className="text-blue-900 font-black text-lg md:text-xl tracking-tight transition-colors duration-300 hover:text-blue-700">
+      Sh. Chander Goyal
+    </h4>
+    <p className="text-gray-500 font-semibold text-sm md:text-base mt-0.5 tracking-wide">
+      Managing Director
+    </p>
+  </div>
+</div>
       </div>
 
       <style>
@@ -192,5 +192,7 @@ export default function Founder() {
         `}
       </style>
     </section>
+    
+    
   );
 }
