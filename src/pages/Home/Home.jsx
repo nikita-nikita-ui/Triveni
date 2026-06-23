@@ -7,6 +7,7 @@ import Countup from '../../components/HomeSection/Countup';
 import Articles from '../../components/HomeSection/Articles';
 import QualityProduct from '../../components/HomeSection/QualityProducts';
 import ContactForm from '../../components/HomeSection/ContactForm';
+import Footer from "../../components/Footer/Footer";
 
 export default function Home() {
   return (
@@ -19,6 +20,7 @@ export default function Home() {
         <Articles />
         <QualityProduct />
         <ContactForm />
+        <Footer />
   </>
   )
 }

@@ -1,5 +1,6 @@
 import { useState, useRef, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom"; // useLocation को इम्पोर्ट किया
+
 const products = [
   {
     name: "Fertilizers",
@@ -163,10 +164,24 @@ const navLinks = ["Home", "About", "Blog", "Contact"];
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [productsOpen, setProductsOpen] = useState(false);
-  const [activeLink, setActiveLink] = useState("Home");
   const dropdownRef = useRef(null);
   const timeoutRef = useRef(null);
+
   const navigate = useNavigate();
+  const location = useLocation(); // यूआरएल (URL) का पता लगाने के लिए
+
+  // वर्तमान यूआरएल पाथ (path) के अनुसार एक्टिव लिंक तय करने के लिए फंक्शन
+  const getActiveLink = () => {
+    const path = location.pathname;
+    if (path === "/") return "Home";
+    if (path.startsWith("/about")) return "About";
+    if (path.startsWith("/blog")) return "Blog";
+    if (path.startsWith("/contact")) return "Contact";
+    return "";
+  };
+
+  const activeLink = getActiveLink();
+
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 60);
     window.addEventListener("scroll", handleScroll);
@@ -265,14 +280,14 @@ export default function Navbar() {
             <button
               key={link}
               onClick={() => {
-                setActiveLink(link);
-
+                // अब setActiveLink() की जरूरत नहीं है, नेविगेट होते ही URL बदल जाएगा और सक्रिय लिंक अपने आप डिटेक्ट हो जाएगा।
                 if (link === "Home") navigate("/");
                 if (link === "About") navigate("/about");
                 if (link === "Blog") navigate("/blog");
                 if (link === "Contact") navigate("/contact");
               }}
               style={{
+                position: "relative",
                 background: "none",
                 border: "none",
                 cursor: "pointer",
@@ -281,7 +296,7 @@ export default function Navbar() {
                 fontSize: 18,
                 letterSpacing: "0.7px",
                 textTransform: "uppercase",
-                padding: "8px 14px",
+                padding: "8px 14px 12px 14px",
                 borderRadius: 8,
                 fontFamily: "inherit",
                 transition: "color 0.2s, background 0.2s",
@@ -297,6 +312,22 @@ export default function Navbar() {
               }}
             >
               {link}
+              {/* एक्टिव होने पर दिखने वाली ग्रीन लाइन */}
+              <span
+                style={{
+                  position: "absolute",
+                  bottom: "3px",
+                  left: "14px",
+                  right: "14px",
+                  height: "3px",
+                  backgroundColor: "#5dce68",
+                  borderRadius: "2px",
+                  transform: activeLink === link ? "scaleX(1)" : "scaleX(0)",
+                  transformOrigin: "center",
+                  opacity: activeLink === link ? 1 : 0,
+                  transition: "transform 0.25s ease, opacity 0.25s ease",
+                }}
+              />
             </button>
           ))}
 
@@ -316,7 +347,7 @@ export default function Navbar() {
                 fontSize: 18,
                 letterSpacing: "0.7px",
                 textTransform: "uppercase",
-                padding: "8px 14px",
+                padding: "8px 14px 12px 14px",
                 borderRadius: 8,
                 fontFamily: "inherit",
                 display: "flex",
