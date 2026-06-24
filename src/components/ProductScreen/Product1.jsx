@@ -4,7 +4,10 @@ export default function ProductUI() {
     <section className="relative w-full h-[60vh] md:h-[75vh] flex flex-col justify-between overflow-hidden bg-black select-none">
       <div
         className="absolute inset-0 bg-cover bg-center z-0"
-        style={{ backgroundImage: `url(${soilImg})` }}
+        style={{
+          backgroundImage: `url(${soilImg})`,
+          animation: "zoomBg 12s ease-in-out infinite",
+        }}
       />
       <div className="absolute inset-0 bg-black/60 z-10" />
 
@@ -125,6 +128,21 @@ export default function ProductUI() {
       </div>
 
       <div className="h-12 w-full relative z-20" />
+      <style>
+        {`
+    @keyframes zoomBg {
+      0% {
+        transform: scale(1);
+      }
+      50% {
+        transform: scale(1.12);
+      }
+      100% {
+        transform: scale(1);
+      }
+    }
+  `}
+      </style>
     </section>
   );
 }
