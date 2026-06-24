@@ -1,8 +1,10 @@
 import Chemicals from "../../Images/Chemicals.jpeg";
 import  { useEffect, useState } from "react";
 import leaf1 from "../../Images/leaf1.png";
+import { useNavigate } from "react-router-dom";
 
 export default function TriveniChemicals() {
+    const navigate = useNavigate();
   const fullText = "ABOUT TRIVENI CHEMICALS";
   const [text, setText] = useState("");
 
@@ -109,17 +111,20 @@ export default function TriveniChemicals() {
               for higher productivity.
             </p>
 
-            <div className="flex">
-              <button className="relative px-6 py-2.5 bg-gradient-to-r from-green-800 to-green-900 text-white rounded-full font-bold text-xs md:text-sm shadow-md shadow-green-900/10 overflow-hidden group hover:shadow-lg transition-all duration-300">
-                <span className="relative z-10 flex items-center gap-1.5 group-hover:translate-x-0.5 transition-transform duration-300">
-                  About Us{" "}
-                  <span className="inline-block transition-transform duration-300 group-hover:translate-x-1">
-                    →
-                  </span>
-                </span>
-                <span className="absolute inset-0 bg-gradient-to-r from-green-950 to-yellow-600 scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-300"></span>
-              </button>
-            </div>
+      <div className="flex">
+  <button
+    onClick={() => navigate("/about")}
+    className="relative px-6 py-2.5 bg-gradient-to-r from-green-800 to-green-900 text-white rounded-full font-bold text-xs md:text-sm shadow-md shadow-green-900/10 overflow-hidden group hover:shadow-lg transition-all duration-300"
+  >
+    <span className="relative z-10 flex items-center gap-1.5 group-hover:translate-x-0.5 transition-transform duration-300">
+      About Us
+      <span className="inline-block transition-transform duration-300 group-hover:translate-x-1">
+        →
+      </span>
+    </span>
+    <span className="absolute inset-0 bg-gradient-to-r from-green-950 to-yellow-600 scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-300"></span>
+  </button>
+</div>
           </div>
         </div>
       </div>
