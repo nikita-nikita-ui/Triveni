@@ -1,7 +1,7 @@
 import React from "react";
-import tamatoimg from "../../Images/tamatoimg.jpg";
-import tractor from "../../Images/tractor.jpg";
-import farrming from "../../Images/farrming.jpg";
+import tamatoimg from "../../Images/organic.avif";
+import tractor from "../../Images/fartractor.avif";
+import farrming from "../../Images/natur.avif";
 
 const Bannersection = () => {
   const cards = [

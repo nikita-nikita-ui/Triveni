@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import bgimg from  "../../Images/bg.jpg"
+import bgimg from  "../../Images/photo.avif"
 
 const LeafIcon = ({ className }) => (
   <svg className={className} viewBox="0 0 60 100" fill="none" xmlns="http://www.w3.org/2000/svg">

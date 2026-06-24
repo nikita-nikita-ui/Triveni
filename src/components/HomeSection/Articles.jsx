@@ -1,8 +1,8 @@
 import React, { useEffect, useState, useRef } from "react";
 import leaf1 from "../../Images/leaf1.png";
-import tamatoimg from "../../Images/tamatoimg.jpg";
-import tractor from "../../Images/tractor.jpg";
-import farrming from "../../Images/farrming.jpg";
+import tamatoimg from "../../Images/organic.avif";
+import tractor from "../../Images/fartractor.avif";
+import farrming from "../../Images/natur.avif";
 import { useNavigate } from "react-router-dom";
 
 export default function Articles() {

@@ -36,35 +36,42 @@ export default function Insecticides() {
   return (
     <>
       <Navbar />
-         <div className="relative w-full h-[320px] md:h-[420px] overflow-hidden flex items-center justify-center">
+   {/* Banner */}
+<div className="relative w-full min-h-[250px] sm:min-h-[320px] md:min-h-[420px] lg:min-h-[500px] overflow-hidden flex items-center justify-center">
 
-        {/* Background */}
-        <div
-          className="absolute inset-0 bg-cover bg-center"
-          style={{
-            backgroundImage:
-              "url('https://images.unsplash.com/photo-1599059813005-11265ba4b4ce?auto=format&fit=crop&w=1600&q=80')",
-          }}
-        />
+  {/* Background */}
+  <div
+    className="absolute inset-0 bg-cover bg-center"
+    style={{
+      backgroundImage:
+        "url('https://images.unsplash.com/photo-1599059813005-11265ba4b4ce?auto=format&fit=crop&w=1600&q=80')",
+    }}
+  />
 
-        {/* Overlay */}
-        <div className="absolute inset-0 bg-black/60" />
+  {/* Overlay */}
+  <div className="absolute inset-0 bg-black/60" />
 
-        {/* Text */}
-        <div className="relative z-10 text-center text-white px-4">
+  {/* Content */}
+  <div className="relative z-10 text-center text-white px-4 max-w-5xl mx-auto">
 
-          <div className="mb-2">
-            <span className="text-sm md:text-lg backdrop-blur-md px-4 py-2 rounded-full bg-white/10">
-              Triveni Chemicals <span className="mx-2">/</span> Products <span className="mx-2">/</span> Insecticides
-            </span>
-          </div>
+    {/* Breadcrumb */}
+    <div className="mb-4">
+      <span className="inline-block text-xs sm:text-sm md:text-base lg:text-lg px-3 sm:px-5 py-2 rounded-full bg-white/10 backdrop-blur-md">
+        Triveni Chemicals
+        <span className="mx-1 sm:mx-2">/</span>
+        Products
+        <span className="mx-1 sm:mx-2">/</span>
+        Insecticides
+      </span>
+    </div>
 
-          <h1 className="text-5xl md:text-7xl font-extrabold">
-            Shop
-          </h1>
+    {/* Title */}
+    <h1 className="font-extrabold leading-tight text-3xl sm:text-5xl md:text-6xl lg:text-7xl">
+      Shop
+    </h1>
 
-        </div>
-      </div>
+  </div>
+</div>
       
       {/* pt-24 md:pt-32 जोड़कर हेडर (Navbar) से पर्याप्त दूरी बनाई गई है */}
       <div className="min-h-screen bg-gray-50 pt-24 pb-16 px-4 sm:px-6 lg:px-8 font-sans">

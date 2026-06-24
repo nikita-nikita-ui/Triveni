@@ -7,8 +7,8 @@ const products = [
     path: "/products/fertilizers",
     hasSubmenu: true,
     children: [
-      { name: "Bio Fertilizers", path: "/products/biostimulants" },
-      { name: "Imported Fertilizers", path: "/products/imported-nutrient" },
+      { name: "Bio Fertilizers", path: "/products/BioFertilizers" },
+      { name: "Imported Fertilizers", path: "/products/ImportedFertilizers" },
     ],
     icon: (
       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
