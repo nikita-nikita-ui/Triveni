@@ -3,10 +3,12 @@ import leaf1 from "../../Images/leaf1.png";
 import tamatoimg from "../../Images/tamatoimg.jpg";
 import tractor from "../../Images/tractor.jpg";
 import farrming from "../../Images/farrming.jpg";
+import { useNavigate } from "react-router-dom";
 
 export default function Articles() {
   const text = "Latest News & Articles";
   const [displayed, setDisplayed] = useState("");
+  const navigate = useNavigate();
 
   useEffect(() => {
     let i = 0;
@@ -51,8 +53,7 @@ export default function Articles() {
 
   return (
     <>
-      {/* Section container: height is auto (content-based), added margin top/bottom */}
-      <section className="animated-bg relative w-full  py-16 px-6 md:px-24 overflow-hidden border-b border-green-100/40">
+      <section className="animated-bg relative w-full py-16 px-6 md:px-24 overflow-hidden border-b border-green-100/40">
         {/* Background Blobs & Particles */}
         <div className="absolute top-10 left-10 w-[500px] h-[500px] bg-yellow-100/30 rounded-full blur-3xl blob-1"></div>
         <div className="absolute bottom-10 right-10 w-[500px] h-[500px] bg-blue-100/30 rounded-full blur-3xl blob-2"></div>
@@ -73,7 +74,7 @@ export default function Articles() {
             <img src={leaf1} alt="leaf decorative" className="w-16 h-auto drop-shadow-lg" />
           </div>
 
-          {/* Cards Grid Container - Removed minHeight: 100vh */}
+          {/* Cards Grid Container */}
           <div style={{ 
               marginTop: "3rem", 
               width: "100%",
@@ -87,7 +88,7 @@ export default function Articles() {
               }}
             >
               {cards.map((card, i) => (
-                <Card key={card.id} card={card} index={i} />
+                <Card key={card.id} card={card} index={i} navigate={navigate} />
               ))}
             </div>
           </div>
@@ -134,8 +135,8 @@ export default function Articles() {
   );
 }
 
-// Card Component (Internal)
-function Card({ card }) {
+// Card Component - navigate को डीस्ट्रक्चर किया गया है
+function Card({ card, navigate }) {
   const ref = useRef(null);
   const visible = useIntersectionObserver(ref);
   const [hovered, setHovered] = useState(false);
@@ -187,12 +188,15 @@ function Card({ card }) {
         <p style={{ fontSize: 14, color: "#4b5563", lineHeight: 1.6, marginBottom: 20 }}>
           {card.desc}
         </p>
-        <button style={{
+        <button 
+          onClick={() => navigate("/sustainable")}
+          style={{
             padding: "8px 16px", borderRadius: 8, border: "2px solid #15803d",
             color: hovered ? "#fff" : "#15803d",
             background: hovered ? "#15803d" : "transparent",
             transition: "0.3s", fontWeight: 600, cursor: "pointer"
-        }}>
+          }}
+        >
           Learn more →
         </button>
       </div>

@@ -12,11 +12,13 @@ import PGR from "./pages/PGR/PGR";
 import Biostimulants from "./pages/Biostimulants/Biostimulants";
 import ImportedNutrient from "./pages/ImportedNutrient/ImportedNutrient";
 import OrganicManure from "./pages/OrganicManure/OrganicManure";
+import Sustainable from "./pages/sustainable/sustainable";
 function App() {
   return (
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/sustainable" element={<Sustainable />} />
         <Route path="/about" element={<About />} />
         <Route path="/blog" element={<Blog />} />
         <Route path="/contact" element={<Contact />} />
