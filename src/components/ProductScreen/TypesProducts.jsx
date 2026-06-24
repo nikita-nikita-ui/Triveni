@@ -282,7 +282,7 @@ export default function TypesProducts() {
     },
     {
       name: "Bio-Fertilizers",
-      path: "/products/biostimulants",
+      path: "/products/BioFertilizers",
       svg: (
         <svg viewBox="0 0 240 240" width="100%" height="100%">
           <path
@@ -343,7 +343,7 @@ export default function TypesProducts() {
     },
     {
       name: "Imported Fertilizers",
-      path: "/products/imported-nutrient",
+      path: "/products/ImportedFertilizers",
       svg: (
         <svg viewBox="0 0 240 240" width="100%" height="100%">
           <path

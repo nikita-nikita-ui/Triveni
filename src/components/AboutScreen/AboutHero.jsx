@@ -88,35 +88,6 @@ export default function AboutHero() {
           sustainable and high-quality solutions. Our mission blends industrial
           excellence with environmental responsibility.
         </p>
-
-        {/* Animated Premium CTA Button */}
-        <div className="animate-fade-in-up delay-400 mt-10">
-          <button className="group relative px-8 py-4 rounded-full bg-gradient-to-r from-emerald-500 to-teal-600 text-white font-semibold text-sm md:text-base tracking-wider shadow-[0_0_20px_rgba(16,185,129,0.3)] hover:shadow-[0_0_35px_rgba(16,185,129,0.5)] transition-all duration-300 hover:-translate-y-0.5 overflow-hidden">
-            {/* Slide Hover Transition Effect */}
-            <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-teal-500 to-emerald-400 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></span>
-
-            {/* Shiny light reflection sweep on hover */}
-            <span className="absolute top-0 -left-[100%] w-[50%] h-full bg-gradient-to-r from-transparent via-white/20 to-transparent skew-x-12 group-hover:left-[100%] transition-all duration-1000 ease-out"></span>
-
-            <span className="relative z-10 flex items-center gap-2">
-              Explore More
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                strokeWidth={2.5}
-                stroke="currentColor"
-                className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"
-                />
-              </svg>
-            </span>
-          </button>
-        </div>
       </div>
 
       {/* Soft dark gradient fade-out at the bottom to connect nicely with the next section */}

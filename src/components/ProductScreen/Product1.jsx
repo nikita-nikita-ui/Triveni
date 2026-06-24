@@ -95,23 +95,6 @@ export default function ProductUI() {
             <path d="M251 31C262 31 266 23 264 16C262 23 255 28 251 31Z" />
           </svg>
         </div>
-
-        <button className="bg-[#0f2c8a] p-2.5 rounded-md hover:bg-[#153eb3] transition-colors duration-200">
-          <svg
-            className="w-6 h-6 text-white"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2.5"
-            viewBox="0 0 24 24"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
-            />
-          </svg>
-        </button>
       </header>
 
       <div className="relative z-20 flex-1 flex flex-col items-center justify-center text-center px-4">

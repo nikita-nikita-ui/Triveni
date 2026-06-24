@@ -36,11 +36,9 @@ const ScrollToTopButton = () => {
             borderRadius: "50%",
             border: "none",
             cursor: "pointer",
-            background:
-              "linear-gradient(135deg, #2E7D32 0%, #66BB6A 100%)",
+            background: "linear-gradient(135deg, #602e7d 0%, #2c315f 100%)",
             color: "#fff",
-            boxShadow:
-              "0 8px 25px rgba(46, 125, 50, 0.4)",
+            boxShadow: "0 8px 25px rgba(123, 97, 172, 0.4)",
             display: "flex",
             alignItems: "center",
             justifyContent: "center",

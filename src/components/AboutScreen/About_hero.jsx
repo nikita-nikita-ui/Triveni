@@ -1,7 +1,8 @@
 import plant1 from "../../assets/plant1.jpg";
 import plant2 from "../../assets/plant2.jpg";
-
+import { useNavigate } from "react-router-dom";
 export default function Abouthero() {
+  const navigate = useNavigate();
   return (
     <>
       <style>{`
@@ -156,7 +157,10 @@ export default function Abouthero() {
             </p>
 
             {/* Call to Action Button */}
-            <button className="bg-[#102a70] hover:bg-[#0c2054] text-white font-bold text-xs sm:text-sm tracking-wider px-8 py-3.5 rounded-full inline-flex items-center gap-3 transition-colors duration-200 uppercase shadow-md">
+            <button
+              onClick={() => navigate("/contact")}
+              className="bg-[#102a70] hover:bg-[#0c2054] text-white font-bold text-xs sm:text-sm tracking-wider px-8 py-3.5 rounded-full inline-flex items-center gap-3 transition-colors duration-200 uppercase shadow-md"
+            >
               Contact Now
               <svg
                 className="w-4 h-4"

@@ -4,15 +4,26 @@ import { useNavigate, useLocation } from "react-router-dom";
 const products = [
   {
     name: "Fertilizers",
-    path: "/products/fertilizers",
+    path: "#",
     hasSubmenu: true,
     children: [
       { name: "Bio Fertilizers", path: "/products/BioFertilizers" },
       { name: "Imported Fertilizers", path: "/products/ImportedFertilizers" },
     ],
     icon: (
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M9 3h6l3 7H6z" /><path d="M6 10s-3 4-3 7a9 9 0 0 0 18 0c0-3-3-7-3-7" /><line x1="12" y1="10" x2="12" y2="21" />
+      <svg
+        width="16"
+        height="16"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      >
+        <path d="M9 3h6l3 7H6z" />
+        <path d="M6 10s-3 4-3 7a9 9 0 0 0 18 0c0-3-3-7-3-7" />
+        <line x1="12" y1="10" x2="12" y2="21" />
       </svg>
     ),
   },
@@ -20,10 +31,23 @@ const products = [
     name: "Insecticides",
     path: "/products/insecticides",
     icon: (
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M8 2l1.5 3" /><path d="M16 2l-1.5 3" /><ellipse cx="12" cy="9" rx="4" ry="3" />
+      <svg
+        width="16"
+        height="16"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      >
+        <path d="M8 2l1.5 3" />
+        <path d="M16 2l-1.5 3" />
+        <ellipse cx="12" cy="9" rx="4" ry="3" />
         <path d="M8 9c-2 0-5 1-5 4a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2c0-3-3-4-5-4" />
-        <path d="M12 12v8" /><path d="M8 16l-3 2" /><path d="M16 16l3 2" />
+        <path d="M12 12v8" />
+        <path d="M8 16l-3 2" />
+        <path d="M16 16l3 2" />
       </svg>
     ),
   },
@@ -31,8 +55,18 @@ const products = [
     name: "Fungicides",
     path: "/products/fungicides",
     icon: (
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M12 22V12" /><path d="M5 12a7 7 0 0 1 14 0" />
+      <svg
+        width="16"
+        height="16"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      >
+        <path d="M12 22V12" />
+        <path d="M5 12a7 7 0 0 1 14 0" />
         <path d="M5 17H3a1 1 0 0 1-1-1v-1a4 4 0 0 1 4-4h12a4 4 0 0 1 4 4v1a1 1 0 0 1-1 1h-2" />
       </svg>
     ),
@@ -41,9 +75,21 @@ const products = [
     name: "Herbicides",
     path: "/products/herbicides",
     icon: (
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M2 22c1-1 3-4 3-8" /><path d="M7 14c0 4-2 7-3 8" />
-        <path d="M12 2s0 8-5 12" /><path d="M12 2s0 8 5 12" /><path d="M12 2v20" />
+      <svg
+        width="16"
+        height="16"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      >
+        <path d="M2 22c1-1 3-4 3-8" />
+        <path d="M7 14c0 4-2 7-3 8" />
+        <path d="M12 2s0 8-5 12" />
+        <path d="M12 2s0 8 5 12" />
+        <path d="M12 2v20" />
       </svg>
     ),
   },
@@ -51,7 +97,16 @@ const products = [
     name: "PGR",
     path: "/products/pgr",
     icon: (
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <svg
+        width="16"
+        height="16"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      >
         <circle cx="12" cy="12" r="3" />
         <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83" />
       </svg>
@@ -61,7 +116,16 @@ const products = [
     name: "Biostimulants",
     path: "/products/biostimulants",
     icon: (
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <svg
+        width="16"
+        height="16"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      >
         <path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10z" />
         <path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12" />
       </svg>
@@ -71,8 +135,18 @@ const products = [
     name: "Imported Nutrient",
     path: "/products/imported-nutrient",
     icon: (
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-        <circle cx="12" cy="12" r="10" /><line x1="2" y1="12" x2="22" y2="12" />
+      <svg
+        width="16"
+        height="16"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      >
+        <circle cx="12" cy="12" r="10" />
+        <line x1="2" y1="12" x2="22" y2="12" />
         <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
       </svg>
     ),
@@ -81,8 +155,18 @@ const products = [
     name: "Organic Manure",
     path: "/products/organic-manure",
     icon: (
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" /><circle cx="12" cy="10" r="3" />
+      <svg
+        width="16"
+        height="16"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      >
+        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+        <circle cx="12" cy="10" r="3" />
       </svg>
     ),
   },
@@ -125,16 +209,23 @@ export default function Navbar() {
   const isLinkActive = (link) => {
     const path = location.pathname;
     if (link === "Home") return path === "/";
-    if (link === "About") return path === "/about" || path.startsWith("/about/");
+    if (link === "About")
+      return path === "/about" || path.startsWith("/about/");
     if (link === "Blog") return path === "/blog" || path.startsWith("/blog/");
-    if (link === "Contact") return path === "/contact" || path.startsWith("/contact/");
+    if (link === "Contact")
+      return path === "/contact" || path.startsWith("/contact/");
     return false;
   };
 
   const isProductsActive = location.pathname.startsWith("/products");
 
   const handleNavClick = (link) => {
-    const routes = { Home: "/", About: "/about", Blog: "/blog", Contact: "/contact" };
+    const routes = {
+      Home: "/",
+      About: "/about",
+      Blog: "/blog",
+      Contact: "/contact",
+    };
     navigate(routes[link]);
   };
 
@@ -148,16 +239,35 @@ export default function Navbar() {
         }`}
         style={
           !scrolled
-            ? { background: "linear-gradient(to bottom, rgba(0,0,0,0.55), transparent)" }
+            ? {
+                background:
+                  "linear-gradient(to bottom, rgba(0,0,0,0.55), transparent)",
+              }
             : {}
         }
       >
         <div className="max-w-[1200px] mx-auto px-6 md:px-8 flex items-center justify-between">
           {/* Logo */}
-          <div className="flex items-center gap-2.5 cursor-pointer" onClick={() => navigate("/")}>
-            <div className="w-9 h-9 rounded-[9px] flex items-center justify-center shadow-[0_0_0_1px_rgba(76,175,80,0.4)]"
-              style={{ background: "linear-gradient(135deg, #4caf50, #2e7d32)" }}>
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+          <div
+            className="flex items-center gap-2.5 cursor-pointer"
+            onClick={() => navigate("/")}
+          >
+            <div
+              className="w-9 h-9 rounded-[9px] flex items-center justify-center shadow-[0_0_0_1px_rgba(76,175,80,0.4)]"
+              style={{
+                background: "linear-gradient(135deg, #4caf50, #2e7d32)",
+              }}
+            >
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="#fff"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
                 <path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10z" />
                 <path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12" />
               </svg>
@@ -177,13 +287,17 @@ export default function Navbar() {
                   key={link}
                   onClick={() => handleNavClick(link)}
                   className={`relative bg-transparent border-none cursor-pointer text-[18px] tracking-[0.7px] uppercase px-3.5 pt-2 pb-3 rounded-lg font-[inherit] transition-all duration-200 hover:bg-white/[0.08] ${
-                    isActive ? "text-[#5dce68]" : "text-white/70 hover:text-white"
+                    isActive
+                      ? "text-[#5dce68]"
+                      : "text-white/70 hover:text-white"
                   }`}
                 >
                   {link}
                   <span
                     className={`absolute bottom-[3px] left-3.5 right-3.5 h-[3px] bg-[#5dce68] rounded-sm transition-all duration-250 origin-center ${
-                      isActive ? "scale-x-100 opacity-100" : "scale-x-0 opacity-0"
+                      isActive
+                        ? "scale-x-100 opacity-100"
+                        : "scale-x-0 opacity-0"
                     }`}
                   />
                 </button>
@@ -205,15 +319,21 @@ export default function Navbar() {
               >
                 Products
                 <svg
-                  width="12" height="12" viewBox="0 0 24 24" fill="none"
-                  stroke="currentColor" strokeWidth="2.5"
+                  width="12"
+                  height="12"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2.5"
                   className={`transition-transform duration-250 opacity-60 ${productsOpen ? "rotate-180" : "rotate-0"}`}
                 >
                   <polyline points="6 9 12 15 18 9" />
                 </svg>
                 <span
                   className={`absolute bottom-[3px] left-3.5 right-3.5 h-[3px] bg-[#5dce68] rounded-sm transition-all duration-250 origin-center ${
-                    isProductsActive ? "scale-x-100 opacity-100" : "scale-x-0 opacity-0"
+                    isProductsActive
+                      ? "scale-x-100 opacity-100"
+                      : "scale-x-0 opacity-0"
                   }`}
                 />
               </button>
@@ -221,9 +341,14 @@ export default function Navbar() {
               {/* Desktop Dropdown */}
               <div
                 className={`absolute top-[calc(100%+10px)] left-1/2 -translate-x-1/2 w-[260px] rounded-[14px] p-2 shadow-[0_20px_40px_rgba(0,0,0,0.5)] transition-all duration-200 ${
-                  productsOpen ? "opacity-100 translate-y-0 pointer-events-auto" : "opacity-0 -translate-y-2 pointer-events-none"
+                  productsOpen
+                    ? "opacity-100 translate-y-0 pointer-events-auto"
+                    : "opacity-0 -translate-y-2 pointer-events-none"
                 }`}
-                style={{ background: "rgba(12,22,14,0.97)", border: "0.5px solid rgba(255,255,255,0.1)" }}
+                style={{
+                  background: "rgba(12,22,14,0.97)",
+                  border: "0.5px solid rgba(255,255,255,0.1)",
+                }}
               >
                 {/* Arrow */}
                 <div
@@ -237,7 +362,9 @@ export default function Navbar() {
                 />
                 {products.map((item, i) => (
                   <div key={item.name}>
-                    {i === 4 && <div className="h-px bg-white/[0.07] my-1.5 mx-1" />}
+                    {i === 4 && (
+                      <div className="h-px bg-white/[0.07] my-1.5 mx-1" />
+                    )}
                     <DropItem item={item} />
                   </div>
                 ))}
@@ -251,9 +378,15 @@ export default function Navbar() {
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             aria-label="Toggle menu"
           >
-            <span className={`block w-5 h-[2px] bg-white rounded transition-all duration-300 ${mobileMenuOpen ? "rotate-45 translate-y-[7px]" : ""}`} />
-            <span className={`block w-5 h-[2px] bg-white rounded transition-all duration-300 ${mobileMenuOpen ? "opacity-0" : ""}`} />
-            <span className={`block w-5 h-[2px] bg-white rounded transition-all duration-300 ${mobileMenuOpen ? "-rotate-45 -translate-y-[7px]" : ""}`} />
+            <span
+              className={`block w-5 h-[2px] bg-white rounded transition-all duration-300 ${mobileMenuOpen ? "rotate-45 translate-y-[7px]" : ""}`}
+            />
+            <span
+              className={`block w-5 h-[2px] bg-white rounded transition-all duration-300 ${mobileMenuOpen ? "opacity-0" : ""}`}
+            />
+            <span
+              className={`block w-5 h-[2px] bg-white rounded transition-all duration-300 ${mobileMenuOpen ? "-rotate-45 -translate-y-[7px]" : ""}`}
+            />
           </button>
         </div>
       </header>
@@ -261,7 +394,9 @@ export default function Navbar() {
       {/* Mobile Menu Overlay */}
       <div
         className={`fixed inset-0 z-40 lg:hidden transition-all duration-300 ${
-          mobileMenuOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
+          mobileMenuOpen
+            ? "opacity-100 pointer-events-auto"
+            : "opacity-0 pointer-events-none"
         }`}
         style={{ background: "rgba(0,0,0,0.5)", backdropFilter: "blur(4px)" }}
         onClick={() => setMobileMenuOpen(false)}
@@ -272,14 +407,30 @@ export default function Navbar() {
         className={`fixed top-0 right-0 h-full w-[280px] z-50 lg:hidden transition-transform duration-300 ease-in-out flex flex-col ${
           mobileMenuOpen ? "translate-x-0" : "translate-x-full"
         }`}
-        style={{ background: "rgba(10,20,12,0.98)", borderLeft: "0.5px solid rgba(255,255,255,0.08)" }}
+        style={{
+          background: "rgba(10,20,12,0.98)",
+          borderLeft: "0.5px solid rgba(255,255,255,0.08)",
+        }}
       >
         {/* Drawer Header */}
         <div className="flex items-center justify-between px-5 py-4 border-b border-white/[0.07]">
           <div className="flex items-center gap-2">
-            <div className="w-7 h-7 rounded-[7px] flex items-center justify-center"
-              style={{ background: "linear-gradient(135deg, #4caf50, #2e7d32)" }}>
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <div
+              className="w-7 h-7 rounded-[7px] flex items-center justify-center"
+              style={{
+                background: "linear-gradient(135deg, #4caf50, #2e7d32)",
+              }}
+            >
+              <svg
+                width="14"
+                height="14"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="#fff"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
                 <path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10z" />
                 <path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12" />
               </svg>
@@ -292,8 +443,16 @@ export default function Navbar() {
             className="w-8 h-8 flex items-center justify-center bg-white/[0.07] rounded-lg border-none cursor-pointer text-white/60 hover:text-white transition-colors"
             onClick={() => setMobileMenuOpen(false)}
           >
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
-              <line x1="18" y1="6" x2="6" y2="18" /><line x1="6" y1="6" x2="18" y2="18" />
+            <svg
+              width="14"
+              height="14"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2.5"
+            >
+              <line x1="18" y1="6" x2="6" y2="18" />
+              <line x1="6" y1="6" x2="18" y2="18" />
             </svg>
           </button>
         </div>
@@ -312,7 +471,9 @@ export default function Navbar() {
                     : "bg-transparent text-white/70 hover:bg-white/[0.06] hover:text-white"
                 }`}
               >
-                {isActive && <span className="w-1 h-5 bg-[#5dce68] rounded-full shrink-0" />}
+                {isActive && (
+                  <span className="w-1 h-5 bg-[#5dce68] rounded-full shrink-0" />
+                )}
                 {link}
               </button>
             );
@@ -329,13 +490,25 @@ export default function Navbar() {
               }`}
             >
               <span className="flex items-center gap-3">
-                {isProductsActive && <span className="w-1 h-5 bg-[#5dce68] rounded-full shrink-0" />}
+                {isProductsActive && (
+                  <span className="w-1 h-5 bg-[#5dce68] rounded-full shrink-0" />
+                )}
                 Products
               </span>
               <svg
-                width="12" height="12" viewBox="0 0 24 24" fill="none"
-                stroke="currentColor" strokeWidth="2.5" className="opacity-50"
-                style={{ transform: mobileProductsOpen ? "rotate(180deg)" : "rotate(0deg)", transition: "transform 0.25s" }}
+                width="12"
+                height="12"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2.5"
+                className="opacity-50"
+                style={{
+                  transform: mobileProductsOpen
+                    ? "rotate(180deg)"
+                    : "rotate(0deg)",
+                  transition: "transform 0.25s",
+                }}
               >
                 <polyline points="6 9 12 15 18 9" />
               </svg>
@@ -345,7 +518,11 @@ export default function Navbar() {
             {mobileProductsOpen && (
               <div className="mt-1 ml-3 flex flex-col gap-0.5 border-l border-[#5dce68]/20 pl-3">
                 {products.map((item) => (
-                  <MobileDropItem key={item.name} item={item} onNavigate={() => setMobileMenuOpen(false)} />
+                  <MobileDropItem
+                    key={item.name}
+                    item={item}
+                    onNavigate={() => setMobileMenuOpen(false)}
+                  />
                 ))}
               </div>
             )}
@@ -376,7 +553,9 @@ function DropItem({ item }) {
       <div className="flex items-center gap-2.5">
         <div
           className={`w-[30px] h-[30px] rounded-[7px] flex items-center justify-center shrink-0 transition-all duration-150 ${
-            hovered ? "bg-[rgba(93,206,104,0.18)] text-[#5dce68]" : "bg-white/[0.06] text-white/50"
+            hovered
+              ? "bg-[rgba(93,206,104,0.18)] text-[#5dce68]"
+              : "bg-white/[0.06] text-white/50"
           }`}
         >
           {item.icon}
@@ -388,7 +567,11 @@ function DropItem({ item }) {
             }`}
           >
             <span>{item.name}</span>
-            {item.hasSubmenu && <span className="text-[10px] opacity-60">{expanded ? "▲" : "▼"}</span>}
+            {item.hasSubmenu && (
+              <span className="text-[10px] opacity-60">
+                {expanded ? "▲" : "▼"}
+              </span>
+            )}
           </div>
         </div>
       </div>
@@ -417,29 +600,47 @@ function MobileDropItem({ item, onNavigate }) {
   const [expanded, setExpanded] = useState(false);
   const navigate = useNavigate();
   const location = useLocation();
-  const isActive = location.pathname === item.path ||
+  const isActive =
+    location.pathname === item.path ||
     (item.children && item.children.some((c) => location.pathname === c.path));
 
   return (
     <div>
       <button
-        onClick={() => {
-          if (item.hasSubmenu) setExpanded(!expanded);
-          else { navigate(item.path); onNavigate(); }
+        onClick={(e) => {
+          // Yahan change karein: Agar submenu hai to navigate mat karo
+          if (item.hasSubmenu) {
+            e.stopPropagation(); // Event ko neeche jane se roko
+            setExpanded(!expanded);
+          } else {
+            navigate(item.path);
+          }
         }}
         className={`w-full flex items-center justify-between px-3 py-2.5 rounded-lg border-none cursor-pointer font-[inherit] text-[13px] transition-colors duration-150 ${
-          isActive ? "text-[#5dce68] bg-[rgba(93,206,104,0.08)]" : "text-white/60 hover:text-white/90 bg-transparent"
+          isActive
+            ? "text-[#5dce68] bg-[rgba(93,206,104,0.08)]"
+            : "text-white/60 hover:text-white/90 bg-transparent"
         }`}
       >
         <span className="flex items-center gap-2">
-          <span className={`${isActive ? "text-[#5dce68]" : "text-white/40"}`}>{item.icon}</span>
+          <span className={`${isActive ? "text-[#5dce68]" : "text-white/40"}`}>
+            {item.icon}
+          </span>
           {item.name}
         </span>
         {item.hasSubmenu && (
           <svg
-            width="10" height="10" viewBox="0 0 24 24" fill="none"
-            stroke="currentColor" strokeWidth="2.5" className="opacity-40"
-            style={{ transform: expanded ? "rotate(180deg)" : "rotate(0deg)", transition: "transform 0.2s" }}
+            width="10"
+            height="10"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2.5"
+            className="opacity-40"
+            style={{
+              transform: expanded ? "rotate(180deg)" : "rotate(0deg)",
+              transition: "transform 0.2s",
+            }}
           >
             <polyline points="6 9 12 15 18 9" />
           </svg>
@@ -451,7 +652,10 @@ function MobileDropItem({ item, onNavigate }) {
           {item.children.map((child) => (
             <button
               key={child.name}
-              onClick={() => { navigate(child.path); onNavigate(); }}
+              onClick={() => {
+                navigate(child.path);
+                onNavigate();
+              }}
               className="w-full text-left px-3 py-2 rounded-lg border-none cursor-pointer font-[inherit] text-[12px] text-white/50 hover:text-white/80 hover:bg-white/[0.05] bg-transparent transition-colors"
             >
               {child.name}
