@@ -1,6 +1,5 @@
-import React from "react";
+import plant from "../../assets/plant2.jpg";
 
-// Google Icon SVG (Ready to use)
 const GoogleIcon = () => (
   <svg className="w-5 h-5 flex-shrink-0" viewBox="0 0 24 24" fill="none">
     <path
@@ -22,7 +21,6 @@ const GoogleIcon = () => (
   </svg>
 );
 
-// Verified Checkmark Badge
 const VerifiedBadge = () => (
   <svg
     className="w-4 h-4 text-purple-600 fill-current flex-shrink-0"
@@ -32,7 +30,6 @@ const VerifiedBadge = () => (
   </svg>
 );
 
-// Star Icon
 const StarIcon = ({ filled }) => (
   <svg
     className={`w-5 h-5 ${filled ? "text-amber-400 fill-current" : "text-gray-300 fill-current"}`}
@@ -75,7 +72,6 @@ export default function Testimonials() {
 
   return (
     <section className="relative py-20 px-6 overflow-hidden bg-white">
-      {/* Smooth CSS Animations (Fade in up & Pulse glow) */}
       <style
         dangerouslySetInnerHTML={{
           __html: `
@@ -107,17 +103,14 @@ export default function Testimonials() {
         }}
       />
 
-      {/* Decorative Glowing Orbs (Soft Purple & Green blur background) */}
       <div className="absolute top-10 left-10 w-80 h-80 rounded-full bg-purple-300/30 blur-3xl pointer-events-none animate-glow" />
       <div className="absolute bottom-10 right-10 w-96 h-96 rounded-full bg-emerald-200/30 blur-3xl pointer-events-none animate-glow" />
 
       <div className="max-w-7xl mx-auto text-center relative z-10">
-        {/* Tagline - Premium Purple */}
         <span className="text-purple-700 text-sm font-bold tracking-wider uppercase inline-block mb-3 animate-fade-up">
           Our Testimonials
         </span>
 
-        {/* Green Bold Header */}
         <h2 className="text-3xl sm:text-5xl font-black tracking-wide uppercase mb-4 animate-fade-up text-[#00b050]">
           What They're Talking About
         </h2>
@@ -152,57 +145,57 @@ export default function Testimonials() {
           </svg>
         </div>
 
-        {/* Review Cards Grid Layout */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-left">
           {reviews.map((review, idx) => (
             <div
               key={review.id}
               className={`group relative overflow-hidden bg-gradient-to-br from-[#064e3b] via-[#065f46] to-[#022c22] p-7 rounded-2xl text-white border border-green-900/30 shadow-[0_10px_30px_rgba(112,85,250,0.04)] hover:shadow-[0_20px_40px_rgba(5,150,105,0.35)] transition-all duration-500 transform hover:-translate-y-3 flex flex-col justify-between min-h-[250px] animate-fade-up delay-${(idx + 1) * 100}`}
             >
-              <div>
-                {/* Header Section of Review Cards */}
-                <div className="flex items-start justify-between mb-4">
-                  <div className="flex items-center gap-3.5">
-                    {/* User Profile Avatar */}
-                    <div
-                      className={`w-12 h-12 rounded-full bg-gradient-to-br ${review.avatarColor} text-white flex items-center justify-center font-bold text-lg shadow-sm`}
-                    >
-                      {review.initials}
-                    </div>
-                    {/* Name & Date */}
-                    <div>
-                      <h4 className="text-white font-bold text-base tracking-tight group-hover:text-purple-900 transition-colors">
-                        {review.name}
-                      </h4>
-                      <p className="text-white-600 text-xs mt-0.5">
-                        {review.date}
-                      </p>
-                    </div>
-                  </div>
-                  {/* Google Logo Icon */}
-                  <div className="bg-gray-50 p-1.5 rounded-lg border border-gray-100 shadow-sm group-hover:bg-purple-50 group-hover:border-purple-100 transition-colors">
-                    <GoogleIcon />
-                  </div>
-                </div>
+              <img
+                src={plant}
+                alt=""
+                className="absolute inset-0 w-full h-full object-cover opacity-75 contrast-125 brightness-50 pointer-events-none z-0 "
+              />
 
-                {/* Star Ratings & Verified Badge */}
-                <div className="flex items-center gap-2 mb-4">
-                  <div className="flex items-center gap-0.5">
-                    {[1, 2, 3, 4, 5].map((star) => (
-                      <StarIcon key={star} filled={star <= review.rating} />
-                    ))}
+              <div className="relative z-10 flex flex-col justify-between h-full flex-1">
+                <div>
+                  <div className="flex items-start justify-between mb-4">
+                    <div className="flex items-center gap-3.5">
+                      <div
+                        className={`w-12 h-12 rounded-full bg-gradient-to-br ${review.avatarColor} text-white flex items-center justify-center font-bold text-lg shadow-sm`}
+                      >
+                        {review.initials}
+                      </div>
+                      <div>
+                        <h4 className="text-white font-bold text-base tracking-tight transition-colors">
+                          {review.name}
+                        </h4>
+                        <p className="text-gray-300 text-xs mt-0.5">
+                          {review.date}
+                        </p>
+                      </div>
+                    </div>
+                    <div className="bg-gray-50 p-1.5 rounded-lg border border-gray-100 shadow-sm transition-colors">
+                      <GoogleIcon />
+                    </div>
                   </div>
-                  <VerifiedBadge />
-                </div>
 
-                {/* Review Text */}
-                <p className="text-white-600 text-sm leading-relaxed font-normal">
-                  "{review.text}"
-                </p>
+                  <div className="flex items-center gap-2 mb-4">
+                    <div className="flex items-center gap-0.5">
+                      {[1, 2, 3, 4, 5].map((star) => (
+                        <StarIcon key={star} filled={star <= review.rating} />
+                      ))}
+                    </div>
+                    <VerifiedBadge />
+                  </div>
+
+                  <p className="text-gray-100 text-sm leading-relaxed font-normal">
+                    "{review.text}"
+                  </p>
+                </div>
               </div>
 
-              {/* Hover Effect: Expands a bottom bar with Green to Purple Gradient */}
-              <div className="absolute bottom-0 left-0 right-0 h-1.5 bg-gradient-to-r from-emerald-500 to-purple-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
+              <div className="absolute bottom-0 left-0 right-0 h-1.5 bg-gradient-to-r from-emerald-500 to-purple-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left z-20" />
             </div>
           ))}
         </div>

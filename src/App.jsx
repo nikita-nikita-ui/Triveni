@@ -13,6 +13,7 @@ import Biostimulants from "./pages/Biostimulants/Biostimulants";
 import ImportedNutrient from "./pages/ImportedNutrient/ImportedNutrient";
 import OrganicManure from "./pages/OrganicManure/OrganicManure";
 import Sustainable from "./pages/sustainable/sustainable";
+import ScrollToTopButton from "././components/ScrollToTopButton/ScrollToTopButton";
 function App() {
   return (
     <BrowserRouter>
@@ -36,6 +37,7 @@ function App() {
           element={<ImportedNutrient />}
         />
       </Routes>
+      <ScrollToTopButton />
     </BrowserRouter>
   );
 }

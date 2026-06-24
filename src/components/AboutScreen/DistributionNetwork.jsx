@@ -1,6 +1,6 @@
 import indiaMap from "../../assets/india.jpg";
 import plant3 from "../../assets/plant3.jpg";
-
+import anotherMap from "../../assets/uttra.jpg";
 export default function DistributionNetwork() {
   return (
     <section className="relative py-20 bg-[#f5f5f5] overflow-hidden">
@@ -68,14 +68,15 @@ export default function DistributionNetwork() {
         </div>
 
         {/* Map Image */}
-        <div className="flex justify-center">
+        <div className="flex justify-center lg:justify-end">
+          {" "}
           <div className="relative group">
             <img
               src={indiaMap}
               alt="India Distribution Network"
               className="
-  w-[600px]
-  h-[600px]
+  w-[150px]
+  h-[150px]
   object-cover
   rounded-full
   transition-all
@@ -84,6 +85,21 @@ export default function DistributionNetwork() {
   relative
   z-10
 "
+            />
+            <img
+              src={anotherMap}
+              alt="Second Network"
+              className="
+      w-[150px]
+      h-[150px]
+      object-cover
+      rounded-full
+      absolute
+      top-0
+      left-1/2
+      z-20
+      border-4 border-white
+    "
             />
 
             <div className="absolute inset-0 rounded-xl shadow-[0_25px_60px_rgba(0,0,0,0.12)] pointer-events-none" />
