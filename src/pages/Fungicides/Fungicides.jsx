@@ -181,31 +181,41 @@ export default function Fungicides() {
   return (
     <>
       <Navbar />
-      {/* Background Banner Section */}
-      <div className="relative w-full h-[320px] md:h-[420px] overflow-hidden flex items-center justify-center">
-        {/* Background */}
-        <div
-          className="absolute inset-0 bg-cover bg-center"
-          style={{
-            backgroundImage: `url(${funImg})`,
-          }}
-        />
+{/* Background Banner Section */}
+<div className="relative w-full min-h-[250px] sm:min-h-[320px] md:min-h-[420px] lg:min-h-[500px] overflow-hidden flex items-center justify-center">
 
-        {/* Overlay */}
-        <div className="absolute inset-0 bg-black/60" />
+  {/* Background */}
+  <div
+    className="absolute inset-0 bg-cover bg-center"
+    style={{
+      backgroundImage: `url(${funImg})`,
+    }}
+  />
 
-        {/* Text */}
-        <div className="relative z-10 text-center text-white px-4">
-          <div className="mb-2">
-            <span className="text-sm md:text-lg backdrop-blur-md px-4 py-2 rounded-full bg-white/10">
-              Triveni Chemicals <span className="mx-2">/</span> Products{" "}
-              <span className="mx-2">/</span> Fungicides
-            </span>
-          </div>
+  {/* Overlay */}
+  <div className="absolute inset-0 bg-black/60" />
 
-          <h1 className="text-5xl md:text-7xl font-extrabold">Shop</h1>
-        </div>
-      </div>
+  {/* Content */}
+  <div className="relative z-10 text-center text-white px-4 max-w-5xl mx-auto">
+
+    {/* Breadcrumb */}
+    <div className="mb-4">
+      <span className="inline-block text-xs sm:text-sm md:text-base lg:text-lg px-3 sm:px-5 py-2 rounded-full bg-white/10 backdrop-blur-md">
+        Triveni Chemicals
+        <span className="mx-1 sm:mx-2">/</span>
+        Products
+        <span className="mx-1 sm:mx-2">/</span>
+        Fungicides
+      </span>
+    </div>
+
+    {/* Title */}
+    <h1 className="font-extrabold leading-tight text-3xl sm:text-5xl md:text-6xl lg:text-7xl">
+      Shop
+    </h1>
+
+  </div>
+</div>
 
       <section className="py-16 px-4 md:px-10 bg-white">
         <div className="max-w-7xl mx-auto">

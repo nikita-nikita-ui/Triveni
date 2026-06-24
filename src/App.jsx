@@ -14,6 +14,8 @@ import ImportedNutrient from "./pages/ImportedNutrient/ImportedNutrient";
 import OrganicManure from "./pages/OrganicManure/OrganicManure";
 import Sustainable from "./pages/sustainable/sustainable";
 import ScrollToTopButton from "././components/ScrollToTopButton/ScrollToTopButton";
+import BioFertilizers from "./pages/BioFertilizers/BioFertilizers";
+import ImportedFertilizers from "./pages/ImportedFertilizers/ImportedFertilizers";
 function App() {
   return (
     <BrowserRouter>
@@ -25,6 +27,7 @@ function App() {
         <Route path="/contact" element={<Contact />} />
         <Route path="/products" element={<Product />} />
         <Route path="/products/fertilizers" element={<Fertilizers />} />
+        <Route path="/products/BioFertilizers" element={<BioFertilizers />} />
         <Route path="/products/:category" element={<Product />} />
         <Route path="/products/insecticides" element={<Insecticides />} />
         <Route path="/products/fungicides" element={<Fungicides />} />
@@ -32,6 +35,11 @@ function App() {
         <Route path="/products/pgr" element={<PGR />} />
         <Route path="/products/biostimulants" element={<Biostimulants />} />
         <Route path="/products/organic-manure" element={<OrganicManure />} />
+        <Route
+          path="/products/ImportedFertilizers"
+          element={<ImportedFertilizers />}
+        />
+
         <Route
           path="/products/imported-nutrient"
           element={<ImportedNutrient />}

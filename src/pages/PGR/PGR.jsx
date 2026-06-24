@@ -49,34 +49,44 @@ export default function PGR() {
   return (
     <>
       <Navbar />
+{/* Background Banner Section */}
+<div className="relative w-full min-h-[250px] sm:min-h-[320px] md:min-h-[420px] lg:min-h-[500px] overflow-hidden flex items-center justify-center">
 
-      {/* Background Banner Section */}
-      <div className="relative w-full h-[320px] md:h-[420px] overflow-hidden flex items-center justify-center">
-        {/* Background */}
-        <div
-          className="absolute inset-0 bg-cover bg-center"
-          style={{
-            backgroundImage:
-              "url('https://images.unsplash.com/photo-1599059813005-11265ba4b4ce?auto=format&fit=crop&w=1600&q=80')",
-          }}
-        />
+  {/* Background */}
+  <div
+    className="absolute inset-0 bg-cover bg-center"
+    style={{
+      backgroundImage:
+        "url('https://images.unsplash.com/photo-1599059813005-11265ba4b4ce?auto=format&fit=crop&w=1600&q=80')",
+    }}
+  />
 
-        {/* Overlay */}
-        <div className="absolute inset-0 bg-black/60" />
+  {/* Overlay */}
+  <div className="absolute inset-0 bg-black/60" />
 
-        {/* Text */}
-        <div className="relative z-10 text-center text-white px-4">
-          <div className="mb-2">
-            <span className="text-sm md:text-lg backdrop-blur-md px-4 py-2 rounded-full bg-white/10">
-              Triveni Chemicals <span className="mx-2">/</span> Products <span className="mx-2">/</span> PGR
-            </span>
-          </div>
+  {/* Content */}
+  <div className="relative z-10 text-center text-white px-4 max-w-5xl mx-auto">
 
-          <h1 className="text-5xl md:text-7xl font-extrabold">Shop</h1>
-        </div>
-      </div>
+    {/* Breadcrumb */}
+    <div className="mb-4">
+      <span className="inline-block text-xs sm:text-sm md:text-base lg:text-lg px-3 sm:px-5 py-2 rounded-full bg-white/10 backdrop-blur-md">
+        Triveni Chemicals
+        <span className="mx-1 sm:mx-2">/</span>
+        Products
+        <span className="mx-1 sm:mx-2">/</span>
+        PGR
+      </span>
+    </div>
 
-      {/* CSS Animation (स्मूथ एंट्री के लिए) */}
+    {/* Title */}
+    <h1 className="font-extrabold leading-tight text-3xl sm:text-5xl md:text-6xl lg:text-7xl">
+      Shop
+    </h1>
+
+  </div>
+</div>
+
+  
       <style>{`
         @keyframes fadeInUp {
           from {
@@ -93,49 +103,54 @@ export default function PGR() {
         }
       `}</style>
 
-      {/* Product Grid Section (बैनर के नीचे और फ़ुटर के ऊपर) */}
-      <section className="bg-slate-50/50 py-16 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 md:gap-8">
-            {products.map((product, index) => (
-              <div
-                key={product.name}
-                className="group cursor-pointer flex flex-col items-center animate-fade-in-up "
-                style={{
-                  animationDelay: `${index * 80}ms`,
-                  opacity: 0, // एनिमेशन होने तक छुपा रहेगा
-                }}
-              >
-                {/* Image Container */}
-                <div className="relative w-full aspect-square sm:aspect-[4/5] bg-white border border-gray-150 rounded-[24px] p-6 sm:p-8 flex items-center justify-center shadow-sm transition-all duration-500 ease-out group-hover:shadow-[0_20px_40px_rgba(15,46,92,0.06)] group-hover:border-emerald-200 group-hover:-translate-y-2 overflow-hidden">
-                  
-                  {/* Background Glow Effect */}
-                  <div className="absolute inset-0 bg-gradient-to-b from-transparent to-emerald-50/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+<section className="bg-slate-50/50 py-10 sm:py-14 md:py-16 px-4 sm:px-6 lg:px-8">
+  <div className="max-w-7xl mx-auto">
 
-                  {/* Image or SVG Fallback Component */}
-                  <ProductImage
-                    src={product.image}
-                    name={product.name}
-                    type={product.type}
-                  />
-                </div>
+    <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6 md:gap-8">
 
-                {/* Product Name */}
-            <h3 className="mt-4 text-center text-lg md:text-xl font-semibold uppercase !text-blue-700 transition-all duration-300 group-hover:text-blue-900">
-  {product.name}
-</h3>
-              </div>
-            ))}
+      {products.map((product, index) => (
+        <div
+          key={product.name}
+          className="group cursor-pointer flex flex-col items-center animate-fade-in-up"
+          style={{
+            animationDelay: `${index * 80}ms`,
+            opacity: 0,
+          }}
+        >
+
+          {/* Image Container */}
+          <div className="relative w-full aspect-square sm:aspect-[4/5] bg-white border border-gray-200 rounded-2xl sm:rounded-[24px] p-4 sm:p-6 md:p-8 flex items-center justify-center shadow-sm transition-all duration-500 ease-out group-hover:shadow-[0_20px_40px_rgba(15,46,92,0.06)] group-hover:border-emerald-200 group-hover:-translate-y-2 overflow-hidden">
+
+            {/* Hover Glow */}
+            <div className="absolute inset-0 bg-gradient-to-b from-transparent to-emerald-50/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+
+            {/* Product Image */}
+            <ProductImage
+              src={product.image}
+              name={product.name}
+              type={product.type}
+            />
+
           </div>
+
+          {/* Product Name */}
+          <h3 className="mt-3 sm:mt-4 text-center text-base sm:text-lg md:text-xl font-semibold uppercase text-blue-700 transition-colors duration-300 group-hover:text-blue-900 px-2">
+            {product.name}
+          </h3>
+
         </div>
-      </section>
+      ))}
+
+    </div>
+  </div>
+</section>
 
       <Footer />
     </>
   );
 }
 
-// इमेज न होने पर सुंदर SVG प्लेसहोल्डर दिखाने के लिए हेल्पर कंपोनेंट
+
 function ProductImage({ src, name, type }) {
   const [hasError, setHasError] = React.useState(false);
 
