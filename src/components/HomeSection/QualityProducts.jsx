@@ -1,8 +1,14 @@
 import { useState, useEffect } from "react";
-import bgimg from  "../../Images/photo.avif"
+import { useNavigate } from "react-router-dom";
+import bgimg from "../../Images/photo.avif";
 
 const LeafIcon = ({ className }) => (
-  <svg className={className} viewBox="0 0 60 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <svg
+    className={className}
+    viewBox="0 0 60 100"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
     <path
       d="M30 95 C30 95 30 20 30 10 M30 10 C20 25 5 30 5 50 C5 70 18 85 30 95 M30 10 C40 25 55 30 55 50 C55 70 42 85 30 95"
       stroke="white"
@@ -10,16 +16,41 @@ const LeafIcon = ({ className }) => (
       strokeLinecap="round"
       fill="none"
     />
-    <path d="M30 30 C22 38 18 48 20 58" stroke="white" strokeWidth="1.5" strokeLinecap="round" fill="none" />
-    <path d="M30 30 C38 38 42 48 40 58" stroke="white" strokeWidth="1.5" strokeLinecap="round" fill="none" />
-    <path d="M30 50 C25 55 22 63 24 70" stroke="white" strokeWidth="1.5" strokeLinecap="round" fill="none" />
-    <path d="M30 50 C35 55 38 63 36 70" stroke="white" strokeWidth="1.5" strokeLinecap="round" fill="none" />
+    <path
+      d="M30 30 C22 38 18 48 20 58"
+      stroke="white"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      fill="none"
+    />
+    <path
+      d="M30 30 C38 38 42 48 40 58"
+      stroke="white"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      fill="none"
+    />
+    <path
+      d="M30 50 C25 55 22 63 24 70"
+      stroke="white"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      fill="none"
+    />
+    <path
+      d="M30 50 C35 55 38 63 36 70"
+      stroke="white"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      fill="none"
+    />
   </svg>
 );
 
 export default function QualityProduct() {
   const [loaded, setLoaded] = useState(false);
   const [hovered, setHovered] = useState(false);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const t = setTimeout(() => setLoaded(true), 100);
@@ -27,14 +58,17 @@ export default function QualityProduct() {
   }, []);
 
   return (
-    <div className="relative w-full overflow-hidden" style={{ minHeight: "480px" }}>
-      {/* Background image with overlay */}
     <div
-  className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-  style={{
-    backgroundImage: `url(${bgimg})`,
-  }}
-/>
+      className="relative w-full overflow-hidden"
+      style={{ minHeight: "480px" }}
+    >
+      {/* Background image with overlay */}
+      <div
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        style={{
+          backgroundImage: `url(${bgimg})`,
+        }}
+      />
       {/* Dark overlay */}
       <div className="absolute inset-0 bg-black/40" />
 
@@ -68,7 +102,9 @@ export default function QualityProduct() {
           <div
             style={{
               opacity: loaded ? 1 : 0,
-              transform: loaded ? "translateX(0) rotate(-15deg)" : "translateX(-30px) rotate(-15deg)",
+              transform: loaded
+                ? "translateX(0) rotate(-15deg)"
+                : "translateX(-30px) rotate(-15deg)",
               transition: "opacity 0.7s ease 0.2s, transform 0.7s ease 0.2s",
             }}
           >
@@ -95,7 +131,9 @@ export default function QualityProduct() {
           <div
             style={{
               opacity: loaded ? 1 : 0,
-              transform: loaded ? "translateX(0) rotate(15deg)" : "translateX(30px) rotate(15deg)",
+              transform: loaded
+                ? "translateX(0) rotate(15deg)"
+                : "translateX(30px) rotate(15deg)",
               transition: "opacity 0.7s ease 0.2s, transform 0.7s ease 0.2s",
             }}
           >
@@ -113,6 +151,7 @@ export default function QualityProduct() {
           }}
         >
           <button
+            onClick={() => navigate("/contact")}
             onMouseEnter={() => setHovered(true)}
             onMouseLeave={() => setHovered(false)}
             className="flex items-center gap-2 px-8 py-3 rounded-full font-semibold text-white text-base"
@@ -121,7 +160,9 @@ export default function QualityProduct() {
               boxShadow: hovered
                 ? "0 8px 32px rgba(29,63,172,0.55)"
                 : "0 4px 16px rgba(29,63,172,0.35)",
-              transform: hovered ? "scale(1.05) translateY(-2px)" : "scale(1) translateY(0)",
+              transform: hovered
+                ? "scale(1.05) translateY(-2px)"
+                : "scale(1) translateY(0)",
               transition: "all 0.25s ease",
               cursor: "pointer",
               border: "none",
